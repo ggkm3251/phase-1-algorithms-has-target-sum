@@ -1,5 +1,15 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const pairOfNumbers = {};
+
+  for (const number of array) {
+    // n steps
+    const complement = target - number;
+    if (complement in pairOfNumbers) return true;
+    pairOfNumbers[number] = true;
+  }
+
+  return false;
 }
 
 /* 
